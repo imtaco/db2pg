@@ -1,0 +1,35 @@
+# db2pg Configuration Example
+# Copy this file to db2pg.yaml and customize for your environment
+
+source:
+  type: mssql
+  conn_str: "sqlserver://username:password@hostname:1433?database=mydb"
+
+target:
+  conn_str: "postgres://username:password@hostname:5432/mydb?sslmode=disable"
+  schema: public
+
+# Migrate all tables or specify a list
+all_tables: false
+tables:
+  - users
+  - orders
+  - products
+
+# Performance tuning
+workers: 4
+batch_size_mb: 10
+prefetch_batches: 3
+
+# Logging
+log_level: INFO
+
+# You can also use environment variables:
+# - MSSQL_URL or DB2PG_SOURCE_CONN_STR
+# - PG_URL or DB2PG_TARGET_CONN_STR
+# - PG_SCHEMA or DB2PG_TARGET_SCHEMA
+# - WORKERS or DB2PG_WORKERS
+# - BATCH_SIZE_MB or DB2PG_BATCH_SIZE_MB
+# - PREFETCH_BATCHES or DB2PG_PREFETCH_BATCHES
+# - TABLES or DB2PG_TABLES (comma-separated)
+# - LOG_LEVEL or DB2PG_LOG_LEVEL

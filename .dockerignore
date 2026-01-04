@@ -1,0 +1,90 @@
+# === Git ===
+.git
+.gitignore
+.gitattributes
+
+# === Documentation ===
+*.md
+!README.md
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs (if building inside container)
+dist/
+build/
+coverage/
+.nyc_output/
+
+# === Golang ===
+# Test binaries
+*.test
+
+# Coverage
+*.out
+coverage.txt
+coverage.html
+
+# Vendor (if not using vendoring in Docker)
+vendor/
+
+# === Environment & Config ===
+.env
+.env.*
+*.env
+.env.local
+
+# === IDE & Editors ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.iml
+
+# === OS Files ===
+.DS_Store
+**/.DS_Store
+Thumbs.db
+Desktop.ini
+
+# === Logs ===
+*.log
+logs/
+npm-debug.log
+yarn-error.log
+
+# === Temporary Files ===
+tmp/
+temp/
+*.tmp
+*.bak
+
+# === Test & CI ===
+.github/
+.gitlab-ci.yml
+.travis.yml
+test/
+tests/
+**/__tests__/
+*.spec.js
+*.spec.ts
+*.test.js
+*.test.ts
+
+# === Project Specific ===
+hls/
+fs/
+backend/example
+backup/
+
+# === Development Files ===
+docker-compose.yml
+docker-compose.*.yml
+Dockerfile.dev
+.dockerignore
+Makefile
